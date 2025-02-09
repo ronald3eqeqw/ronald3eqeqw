@@ -17,9 +17,11 @@
             justify-content: center;
             flex-direction: column;
             height: 100vh;
-            background: url('https://source.unsplash.com/1600x900/?hearts,flowers,love') no-repeat center center/cover;
+            background-color: pink;
             text-align: center;
             color: white;
+            font-size: 2rem;
+            background-image: repeating-linear-gradient(45deg, red, pink 10%, white 20%);
         }
         .content {
             background: rgba(0, 0, 0, 0.6);
@@ -51,9 +53,8 @@
             background: #6200ea;
             color: white;
         }
-        .bear {
-            width: 150px;
-            height: auto;
+        .emoji {
+            font-size: 5rem;
             animation: blink 1s infinite alternate;
         }
         @keyframes blink {
@@ -67,9 +68,8 @@
         <source src="https://www.mboxdrive.com/Camila-TodoCambio.mp3" type="audio/mp3">
     </audio>
     <div class="content">
-        <h1 id="question">¿Quieres ser mi San Valentín, Weny?</h1>
-        <img id="loveImage" src="https://source.unsplash.com/400x300/?love,romance" alt="Imagen de amor">
-        <img src="https://www.animatedimages.org/data/media/710/animated-teddy-bear-image-0112.gif" alt="Osito" class="bear">
+        <h1 id="question">¿Quieres ser mi San Valentín, Weny? 💖</h1>
+        <div class="emoji">❤️💞💓💗💖💕💘💝</div>
         <div class="buttons">
             <button class="yes" id="yesButton" onclick="acceptLove()">Sí</button>
             <button class="no" onclick="rejectLove()">No</button>
@@ -85,7 +85,6 @@
 
         function rejectLove() {
             document.getElementById("question").textContent = messages[index];
-            document.getElementById("loveImage").src = `https://source.unsplash.com/400x300/?love,romance,${index}`;
             index = (index + 1) % messages.length;
             yesButton.style.fontSize = (parseFloat(getComputedStyle(yesButton).fontSize) + 5) + "px";
             yesButton.style.padding = (parseFloat(getComputedStyle(yesButton).padding) + 5) + "px";
@@ -97,4 +96,3 @@
     </script>
 </body>
 </html>
-
